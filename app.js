@@ -5,7 +5,6 @@ let text = document.getElementById("text")
 
 btn.addEventListener("click", handleClick)
 
-
 function handleClick() {
   mkRandNum()
   render()
