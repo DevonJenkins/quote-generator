@@ -2,10 +2,25 @@ body{
   margin-top: 150px;
   text-align: center;
   background: black;
-  color: white; 
+  color: rgb(203 14 3); 
 }
 
 img{
   width: 300px;
   height: 150px; 
 }
+
+button{
+background:none;
+border:1px solid rgb(203 14 3);
+border-radius: 6px; 
+color: rgb(203 14 3)
+}
+
+button:hover{
+  color:White;
+  background:gray ; 
+  border: none; 
+  cursor: pointer; 
+}
+
