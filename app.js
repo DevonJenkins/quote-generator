@@ -7,13 +7,15 @@ let shrinkflation = "https://image.shutterstock.com/image-photo/shrinkflation-co
 
 let images = [tomatoes, measuringTape, tomatoes2, shrinkflation]
 
-let btn = document.getElementById("btn")
-let btn2 = document.getElementById("btn2")
+let btnContainer = document.getElementById("btn-container")
 let text = document.getElementById("text")
 let image = document.getElementById("image")
 
-btn.addEventListener("click", handleClick)
-btn2.addEventListener("click", theConchHasSpoken)
+function init() {
+  createMainBtns()
+}
+
+init()
 
 function handleClick() {
   mkRandNum()
@@ -33,12 +35,65 @@ function render() {
 }
 
 function reset() {
+  resetBtnRemove()
+  createMainBtns()
+  image.innerHTML = ''
+}
 
+function resetBtnRemove() {
+  let resetBtn = document.getElementById('reset-btn')
+  if (!resetBtn) {
+    console.log('no reset button')
+  } else {
+    resetBtn.remove()
+    console.log('reset')
+  }
 }
 
 function theConchHasSpoken() {
-  text.remove()
-  image.remove()
-  document.body.innerHTML = '<img src=https://image.shutterstock.com/image-photo/note-colorful-wording-by-dice-600w-540541606.jpg > </br> <button id= " ">hi</button>'
+  removeMainBtns()
+  resetBtnRemove()
+  text.innerHTML = ''
+  image.innerHTML = '<img src=https://image.shutterstock.com/image-photo/note-colorful-wording-by-dice-600w-540541606.jpg >'
+  createResetBtn()
+}
+
+function createResetBtn() {
+  const button = document.createElement('button')
+  button.innerHTML = "reset"
+  button.id = 'reset-btn'
+  button.addEventListener('click', reset)
+  btnContainer.append(button)
+}
+
+function createMainBtns() {
+  removeMainBtns()
+  const btn = document.createElement('button')
+  const btn2 = document.createElement('button')
+  btn.id = 'btn'
+  btn2.id = 'btn2'
+  btn.innerHTML = 'press me'
+  btn2.innerHTML = 'The Conch has spoken.'
+  text.innerHTML = 'Welcome'
+  btnContainer.append(btn)
+  btnContainer.append(btn2)
+  btn.addEventListener('click', handleClick)
+  btn2.addEventListener('click', theConchHasSpoken)
+}
+
+function removeMainBtns() {
+  let btn = document.getElementById('btn')
+  let btn2 = document.getElementById('btn2')
+  if (!btn) {
+    console.log('no btn')
+  } else {
+    btn.remove()
+  }
+
+  if (!btn2) {
+    console.log('no btn2')
+  } else {
+    btn2.remove()
+  }
 
 }

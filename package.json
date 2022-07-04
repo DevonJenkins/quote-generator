@@ -1,3 +1,24 @@
 {
-    "type": "module"
+    "name": "import-practice",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DevonJenkins/quote-generator.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DevonJenkins/quote-generator/issues"
+    },
+    "homepage": "https://github.com/DevonJenkins/quote-generator#readme",
+    "description": "",
+    "dependencies": {
+        "express-generator": "^4.16.1",
+        "mongodb": "^4.7.0"
+    }
 }
