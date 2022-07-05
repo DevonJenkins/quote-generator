@@ -23,6 +23,9 @@ function handleClick() {
   render()
 }
 
+//-----------------------------------------------
+//                    Helper functions 
+//-----------------------------------------------
 function mkRandNum() {
   return Math.floor(Math.random() * quotes.length)
 }
@@ -53,7 +56,7 @@ function resetBtnRemove() {
 function theConchHasSpoken() {
   removeMainBtns()
   resetBtnRemove()
-  text.innerHTML = ''
+  text.innerText = ''
   image.innerHTML = '<img src=https://image.shutterstock.com/image-photo/note-colorful-wording-by-dice-600w-540541606.jpg >'
   createResetBtn()
 }
@@ -89,11 +92,10 @@ function removeMainBtns() {
   } else {
     btn.remove()
   }
-
   if (!btn2) {
     console.log('no btn2')
   } else {
     btn2.remove()
   }
-
 }
+
